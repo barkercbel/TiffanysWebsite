@@ -1,0 +1,305 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'variables.scss';
+
+
+body{
+
+}
+
+.hide{
+  display: none;
+}
+
+.pointer-cursor{
+  cursor: pointer;
+}
+
+#send-button{
+  cursor: pointer;
+  width: 25%;
+  height: 25px;
+}
+
+#connections{
+  display: inline;
+}
+
+.chat-title{
+  color: white;
+  font-size: 14px;
+  font-family: verdana;
+  margin-left: 25px;
+}
+
+#messages-container{
+    right: 60px;
+    position: fixed;
+    border-radius: 10px 10px 0px 0px;
+    border: 2px solid $fill;
+    width: 350px;
+    height: 40px;
+    background: $primary;
+    bottom: 0px;
+}
+
+#messages-inner{
+  margin: 30px 10px 0px 10px;
+  height: 350px;
+  border-radius: 10px 0px 0px 0px;
+  padding: 15px 10px 0px 10px;
+  background: $fill;
+  overflow-y: scroll;
+}
+
+#message-content{
+  width: 100%;
+  height: 50px;
+  background: white;
+  color: black;
+  bottom: 0px;
+  resize: none;
+}
+
+.user{
+  margin-top: 15px;
+  float: left;
+  background: $light-offwhite;
+  width: 90%;
+  border-radius: 15px 15px 15px 0px;
+}
+
+.user-title{
+  font-family: helvetica, verdana;
+  font-size: 14px;
+  margin-left: 10px;
+  color: black;
+}
+
+.user-content{
+  font-family: helvetica, verdana;
+  font-size: 12px;
+  color: $primary;
+}
+    
+.artist{
+  margin-top: 15px;
+  float: right;
+  background: $primary;
+  width: 90%;
+  border-radius: 15px 15px 0px 15px;
+}
+
+.artist-title{
+  font-family: verdana;
+  font-size: 14px;
+  margin-left: 10px;
+  color: $secondary;
+}
+
+.artist-content{
+  font-family: verdana;
+  font-size: 12px;
+  color: $secondary;
+}
+
+/************************ Header ******************************/
+.header-color{
+  height: 150px;
+  background: $primary;
+  position: absolute;
+  top: 45px;
+  left: 13%;
+  right: 12%;
+  
+}
+
+.header{
+  position: absolute;
+  right: 13%;
+  left: 12%;
+  top: 35px;
+  height: 150px;
+  background: white;
+  text-align: center;
+  
+  border-top: 1px solid $primary;
+  border-right: 1px solid $primary;
+  border-left: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+  
+  h1{
+    color: $primary;
+    font-family: 'Playfair Display SC', "Book Antiqua", georgia;
+    font-size: 67px;
+    text-shadow: 1px 1px 1px $secondary;
+    
+  }
+  
+  .login-container{
+    
+  }
+  
+  li{
+    display: inline-block;
+    float: right;
+    margin-right: 40px;
+    margin-top: 2px;
+  
+    a{
+      text-decoration: none;
+    }
+  }
+  
+  .logout{
+    color: $dark-offwhite;
+  }
+  .logout:hover{
+    background: none;
+    color: $pink;
+  }
+  .login{
+    color: $pink;
+  }
+  .login:hover{
+    background: none;
+    color: $dark-offwhite;
+  }
+}
+
+
+
+/************************Main Menu*********************************/
+.overflow-container{
+  overflow-y: hidden;
+  padding-bottom: 20px;
+  vertical-align: middle;
+}
+
+#menu-container{
+    list-style-type: none;
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    margin-top: 200px;
+    margin-left: 7%;
+    border-top: 2px solid $warm-grey;
+    border-bottom: 2px solid $warm-grey;
+    
+    display: table;
+    width: 85%;
+    table-layout: fixed; 
+    
+    li{ 
+        overflow-y: hidden;
+        display: table-cell;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        
+    }
+    
+    .bar{
+      font-size: 32px;
+      font-family: georgia;
+      width: 5%;
+    }
+    
+    .main-menu{
+      font-family: "Book Antiqua", georgia, verdana, sans-serif;
+      font-size: 28px;
+      text-decoration: none;
+      color: $primary;
+      padding: 7px;
+    }
+    .main-menu:hover{
+      background: white;
+      color: $pink;
+    }
+}
+
+.page-spacing{
+  @include shadow(0px, -10px, 10px, 7px, $dark-offwhite);
+  width: 75%;
+  margin: 130px 0px 100px 12%;
+  padding-bottom: 150px;
+  padding-top: 50px;
+  position: relative;
+  @include gradient(white, white);
+  border-radius: 60px 60px 0px 0px;
+  
+  #secondary-header{
+    width: 100%;
+    height: 75px;
+    background: $primary;
+    margin-bottom: 100px;
+  }
+  
+}
+
+.gallery-component-div{
+  width: 25%;
+  margin-left: 5%;
+  height: 300px;
+  display: inline-block;
+}
+
+
+
+/******************************************************************/
+
+
+.notice{
+  color: red;
+  font-size: 13px;
+  border: red;
+  margin-left: 25px;
+}
+
+.indent input{
+  margin-left: 45px;
+}
+
+#logo{
+  position: absolute;
+}
+
+#application-name{
+  position: absolute;
+  top: 15px;
+  left: 100px;
+  
+  color: white;
+  font-size: 82px;
+  font-family: helvetica, verdana, sans-serif;
+}
+
+#page-header{
+  text-align: center;
+  font-family: "Book Antiqua", georgia, verdana, sans-serif;
+  font-size: 32px;
+  color: $dark-offwhite;
+  margin-top: -130px;
+}
+
+#admin-links{
+  margin-left: 50px;
+}
+
+#login-message{
+  margin-top: 50px;
+  margin-left: 20%;
+  width: 60%;
+  color: black;
+}
+
+
+
+
+
+
+
+

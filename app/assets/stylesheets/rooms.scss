@@ -1,0 +1,85 @@
+
+@import 'variables.scss';
+
+.rooms{
+  
+  h1{
+    color: $dark-offwhite;
+    margin-top: 15px;
+    margin-left: -12%;
+  }
+  
+  .room-container{
+    margin-top: 140px;
+    margin-left: 15%;
+    width: 60%;
+  }
+  
+  .user-email{
+    margin-top: 20px;
+  }  
+  
+  #user-email-address{
+    width: 260px;
+  }
+  
+  #email-content{
+    margin-top: 25px;
+    width: 100%;
+    height: 100px;
+  }
+  
+  #email-message{
+    float: right;
+    margin-top: 10px;
+  }
+  
+  .statement-container{
+    margin-top: 50px;
+    padding: 7px;
+    border-right: 2px solid $secondary;
+    border-left: 2px solid $secondary;
+    border-radius: 7px;
+  }
+  .text-area{
+    width: 100%;
+    min-height: 100px;
+  }
+}
+
+#home-container{
+  margin: 70px 0px 80px 100px;
+  display: inline-block;
+  padding: 0px 20px;
+}
+#home-name{
+  color: $primary;
+  font-size: 72px;
+  top: 0px;
+  font-family: helvetica, verdana, sans-serif;
+}
+#home-description{
+  color: $primary;
+  font-size: 18px;
+  font-family: helvetica, verdana, sans-serif;
+  float: right;
+  margin-right: 50px;
+  margin-top: -50px;
+}
+.submit-email{
+  float: right;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

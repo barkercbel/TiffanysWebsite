@@ -1,0 +1,37 @@
+<h1 id="page-header">Login</h1>
+<% unless flash[:error].nil? %>
+	<h6 id='error' class="center"><%= flash[:error] %></h6>
+<% end %>
+
+<div class="login-container">
+<%= form_for @user, url: submit_login_path do |f| %>
+	<fieldset>
+  		<legend><p>Login</p></legend>
+  		
+  		<table>
+  			<tr>
+  				
+  				<div class="field">
+    				<td><%= f.label 'username:' %></td>
+    				<td class="indent"><%= f.text_field :username %></td>
+  				</div>
+			</tr>
+			
+			<tr>
+  				<div class="field">
+    				<td><%= f.label 'password:' %></td>
+    				<td class="indent"><%= f.password_field :password %></td>
+	  			</div>
+  		  	</tr>
+  		  	
+  		</table>
+  		<div class="field">
+    		<%= f.submit 'Login', :class => 'submit-button' %>
+  		</div>
+  	</fieldset>
+<% end %>  	
+</div>
+
+<div id='login-message'>
+	<em>*To log in with a temperary account and assign a name for yourself in the chat window, enter a username with any password and click login</em>
+</div>

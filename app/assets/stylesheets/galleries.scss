@@ -1,0 +1,134 @@
+@import 'variables.scss';
+
+
+.galleries{
+  
+  .image-container{
+    padding-top: 30px;
+    
+    .show-image{
+      width: 80%;
+      margin-left: 10%;
+      margin-top: 30px;
+    }
+    
+    .show-title{
+      display: inline;
+      margin-left: 10%;
+      font-size: 18px;
+      font-family: helvetica, verdana;
+    }
+    
+    .show-description-container{
+      margin-left: 15%;
+      margin-right: 10%;
+      margin-top: 50px;
+      font-size: 18px;
+      font-family: helvetica, verdana;
+      
+      p{
+        font-size: 14px;
+        width: 70%;
+      } 
+    }
+  }
+  
+  .new-gallery-container{
+    margin-left: 20%;
+    margin-top: 130px;
+    padding: 20px;
+    background: $secondary;
+    width: 60%;
+    border-right: 2px solid $secondary;
+    border-bottom: 3px solid $secondary;
+    border-left: 2px solid $primary;
+    border-top: 1px solid $primary;
+    border-radius: 0px 0px 40px 0px;
+    
+    td{
+      width: 100%;
+    }
+    
+  }
+  
+  .gallery-label{
+    color: $pink;
+    margin-left: 25px;
+    font-family: gill-sans;
+    font-size: 18px;  
+  }
+  
+  .gallery-field{
+    margin-right: 30px;
+    float: right;
+  }
+  
+  .gallery-image-field{
+    float: right;
+  }
+  
+  .gallery-description-field{
+    margin-top: 20px;
+    height: 40px;
+    width: 90%;
+    margin: 5%;
+  }
+  
+  .field{
+    margin-top: 15px;
+  }
+  
+  .submit-button{
+    background: $secondary;
+    text-decoration: none;
+    color: $pink;
+    font-family: helvetica, verdana;
+    font-size: 12px;
+    padding: 5px 23px 5px 17px;
+    border-radius: 0px 0px 20px 0px;
+    border: 2px solid $fill;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+  .submit-button:hover{
+    background: $dark-offwhite;
+    color: $fill;
+    border: 2px solid $fill;
+  }
+  
+  .cancel-button{
+    background: $pink;
+    text-decoration: none;
+    color: $secondary;
+    font-family: helvetica, verdana;
+    font-size: 12px;
+    padding: 5px 23px 5px 17px;
+    border-radius: 0px 0px 20px 0px;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+  .cancel-button:hover{
+    background: $dark-offwhite;
+    color: $fill;
+    border: 2px solid $fill;
+  }
+
+  .admin-button{
+    text-decoration: none;
+    padding: 3px 7px 3px 7px;
+    border-radius: 0px 0px 15px 0px;
+    border: 1px solid $accent;
+    background: $secondary;
+    position: absolute;
+    top: 30px;
+    left: 5%;
+  }
+  
+  #gallery-page-container{
+    margin-top: 130px;
+  }
+}
+
+
+
+

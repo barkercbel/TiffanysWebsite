@@ -1,0 +1,25 @@
+$primary: #525C65;
+$secondary: #97FFFF;
+
+$accent: #008B8B;
+$pink: #F08080;
+$warm-grey: #FFD39B;
+
+$fill: #F0F8FF;
+$light-offwhite: #EBEBEB;
+$dark-offwhite: #888888;
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
+
+@mixin gradient($color-one, $color-two) {
+  background: -webkit-linear-gradient(left, $color-one, $color-two);
+  background: -o-linear-gradient(right, $color-one, $color-two);
+  background: -moz-linear-gradient(right, $color-one, $color-two);
+  background: linear-gradient(right, $color-one, $color-two);
+}
+
+@mixin shadow($h, $v, $blur, $size, $color){
+  -moz-box-shadow: $h $v $blur $size $color;
+  -webkit-box-shadow: $h $v $blur $size $color;
+  box-shadow: $h $v $blur $size $color;
+}

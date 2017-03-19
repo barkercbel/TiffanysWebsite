@@ -1,0 +1,18 @@
+<%=
+	if(message.from.eql? 'Admin')
+		@messageStatus = "artist"
+		message.from = "Tiffany Nelson"
+	else
+		@messageStatus = "user"
+	end
+	
+	@messageTitle = @messageStatus + "-title"
+	@messageBody = @messageStatus + "-content"
+	@end
+%>
+<div class=<%= @messageStatus %>>
+	<p class=<%= @messageTitle %>> <u><%= message.from %></u> </p>
+	<p class=<%= @messageBody %>> <%= message.content %> </p>
+</div>
+
+

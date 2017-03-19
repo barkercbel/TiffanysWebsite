@@ -1,0 +1,24 @@
+Rails.application.routes.draw do
+
+
+  resources :galleries
+  
+  root to: 'rooms#show'
+  post 'rooms/disco' => 'rooms#disco'
+  
+  get 'statement' => 'rooms#statement', as: :statement
+  get 'contact' => 'rooms#contact', as: :contact
+  get 'room/:id/edit' => 'rooms#edit', as: :edit_room_info
+  patch 'room/:id/update' => 'rooms#update', as: :room
+  post '/contact' => 'rooms#send_email', as: :send_email
+  
+  get 'users/login' => 'users#login', as: :login
+  get 'users/logout' => 'users#logout', as: :logout
+  get 'users/new' => 'users#new', as: :new_user
+  post 'users/login' => 'users#submit_login', as: :submit_login
+  post 'users/new' => 'users#create'
+  delete 'users/:id' => 'users#destroy'
+  
+  mount ActionCable.server => '/cable'
+
+end

@@ -1,0 +1,16 @@
+
+<h1 id='page-header'>Gallery</h1>
+<p id="notice"><%= notice %></p>
+<% if session[:user].eql? "Admin" %>
+	<span><%= link_to 'New Gallery', new_gallery_path, :class => "admin-button" %></span>
+<% end %>
+
+<br />
+
+<div id="gallery-page-container" >
+	<% @galleries.each do |item| %>
+		<div class="gallery-component-div">
+			<%= react_component('GalleryParent', { title: item.title, image_url: item.image.url(:thumb), description: item.description, id: item.id }) %>
+		</div>
+	<% end %>
+</div>

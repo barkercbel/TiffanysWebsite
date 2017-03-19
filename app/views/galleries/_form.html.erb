@@ -1,0 +1,42 @@
+<%= form_for @gallery, html: { multipart: true } do |f| %>
+
+  	<% if gallery.errors.any? %>
+    	<div id="error_explanation">
+      		<h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+
+      		<ul>
+	      	<% gallery.errors.full_messages.each do |message| %>
+    	    	<li><%= message %></li>
+    	  	<% end %>
+	      	</ul>
+    	</div>
+	<% end %>
+
+	<div class='new-gallery-container'>
+		
+		<table>
+			<tr>
+				<div class='field'>	
+					<td><span class='gallery-label'>Title:</span></td>
+					<td class="indent"><%= f.text_field :title, :class => 'gallery-field' %></td>
+				</div>
+			</tr>
+			<tr>
+				<div class="field">
+    				<td><span class='gallery-label'>Image:</span></td>
+    				<td class="indent"><%= f.file_field :image, :class => 'gallery-image-field' %></td>
+		  		</div> 
+			</tr>
+		</table>
+		
+		<div class='field'>
+			<%= f.label 'description:', :class => 'gallery-label' %>
+			<%= f.text_area :description, :class => 'gallery-description-field' %>
+		</div>
+		
+
+		<%= f.submit 'Create', :class => 'submit-button' %>
+		<%= link_to 'Cancel', galleries_path, :class => 'cancel-button' %>
+
+	</div>
+<% end %>

@@ -1,0 +1,22 @@
+
+<h1 id='page-header'><%= @gallery.title %></h1>
+<p id="notice"><%= notice %></p>
+
+<div class="image-container">
+	
+	<%= image_tag @gallery.image.url(:large), :class => "show-image"%>
+			
+	<div class="show-description-container">
+		Description:
+		<p><%= @gallery.description %></p>
+	</div>
+
+</div>
+
+<div id='admin-links'>
+	<% if session[:user].eql? "Admin" %>
+		<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+		<%= link_to 'Delete', @gallery, method: :delete, data: { confirm: 'Are you sure?' } %> |
+		<%= link_to 'Back', galleries_path %>
+	<% end %>
+</div>

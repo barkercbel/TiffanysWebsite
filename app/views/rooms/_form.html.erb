@@ -1,0 +1,12 @@
+
+<h1 id="page-header">Edit:  <%= info.key %></h1>
+<div class="room-container" >
+
+	
+	<div class="statement-container" >
+		<%= form_for info do |f| %>
+			<p><%= f.text_area :value, class: 'text-area' %></p>
+			<%= f.submit "update" %>
+		<% end %>
+	</div>
+</div>

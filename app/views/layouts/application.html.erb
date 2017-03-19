@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TiffanysWebsite</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <script type="text/javascript">
+    	function toggleExpand(){
+    		let messagesContainer = document.getElementById("messages-container");
+    		let messagesInner = document.getElementById("messages");
+    		
+    		if(messagesInner.classList.contains("hide")){
+    			messagesInner.classList.remove("hide");
+    			messagesContainer.style.height = "410px";
+    		}
+    		else{
+    			messagesInner.classList.add("hide");
+    			messagesContainer.style.height = "40px";
+    		}
+    	}
+    
+    </script>
+    
+  </head>
+
+  <body>
+  	
+	<div class='header-color'>
+	</div>
+
+	<div class='header'>
+	  	<h1>Tiffany . Nelson</h1>
+	  	<span><em>artist | metal smith | maker</em></span>
+	  	<span class="login-container">
+			<ul>
+				<% if session[:user].nil? %>
+					<li><%= link_to 'Login', login_path, :class => 'login', method: :get %></li>
+				<% else %>
+					<li><%= link_to 'Logout', logout_path, :class => 'logout', method: :get %></li>				
+				<% end %>
+				<li><%= link_to 'New User', new_user_path, :class => 'logout' %></li>
+			</ul>
+		</span>
+  	</div>
+  	
+	
+  	
+  	<div class='overflow-container'>
+	  	<div>
+  			<div id='menu-container'>
+    			<li><%= link_to 'Home', root_path, :class => 'main-menu' %></li>
+    			<li class="bar">|</li>
+  				<li><%= link_to 'Gallery', galleries_path, :class => 'main-menu' %></li>
+  				<li class="bar">|</li>
+  				<li><%= link_to 'Artist', statement_path, :class => 'main-menu' %></li>
+ 				<li class="bar">|</li>
+ 				<li><%= link_to 'Contact', contact_path, :class => 'main-menu' %></li>
+		  	</div>
+	  	</div>
+  	</div>
+  	
+  	<div class='page-spacing'>
+  		<div class="<%= controller.controller_name %>">
+    		<%= yield %>
+	    </div>
+    </div>
+    
+	<div id="messages-container">
+		<span class="pointer-cursor chat-title" onclick="toggleExpand()">chat window -- people: <p id='connections'><%= @connections %></p></span>
+		<div id="messages-inner">
+			<textarea id="message-content" data-behavior="message-content-box" ></textarea>
+			<input title="Click on login to create a temperary account to see your name appear on your messages" type="button" id="send-button" data-user="<%= session[:user] %>" onclick="App.room.speak()" value="send" />
+    		<div id="messages" class="hide">
+				<%= render @messages %>
+			</div>
+		</div>
+	</div>
+  
+  </body>
+</html>
+
+
+
+
+
+
+
+

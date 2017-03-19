@@ -1,0 +1,15 @@
+
+<h1 id='page-header'>Contact</h1>
+
+<div class="room-container">
+	<%= form_for :email_info do |e| %>
+		<span class="user-email">Your email address:
+		<%= e.text_field :sender_email, id: 'user-email-address', placeholder: 'please enter your email address'%></span><br />
+		<%= e.text_area :email_content, id: 'email-content' %><br />
+		<%= e.submit 'send email', :class => 'submit-email' %>
+	<% end %>
+</div>
+
+<% if session[:user].eql? "Admin" %>
+	<%= link_to 'Edit', edit_room_info_path(@info) %>
+<% end %>
