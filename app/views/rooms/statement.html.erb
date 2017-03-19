@@ -7,9 +7,10 @@
 	</div>
 </div>
 
-<% if session[:user].eql? "Admin" %>
-	<%= link_to 'Edit', edit_room_info_path(@info) %>
-<% end %>
-
+<div id='admin-links'>
+	<% if session[:user].eql? "Admin" %>
+		<%= link_to 'Edit', edit_room_info_path(@info) %>
+	<% end %>
+</div>
 
 
