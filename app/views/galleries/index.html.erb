@@ -1,11 +1,12 @@
 
-<h1 id='page-header'>Gallery</h1>
-<p id="notice"><%= notice %></p>
-<% if session[:user].eql? "Admin" %>
-	<span><%= link_to 'New Gallery', new_gallery_path, :class => "admin-button" %></span>
-<% end %>
+
+<div id='secondary-header'></div>
 
 <br />
+
+<% if session[:user].eql? 'Admin' %>
+	<%= link_to 'New Galley Image', new_gallery_path, :class => 'admin-button' %>
+<% end %>
 
 <div id="gallery-page-container" >
 	<% @galleries.each do |item| %>

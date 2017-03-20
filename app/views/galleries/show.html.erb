@@ -1,11 +1,12 @@
 
-<h1 id='page-header'><%= @gallery.title %></h1>
 <p id="notice"><%= notice %></p>
 
 <div class="image-container">
 	
 	<%= image_tag @gallery.image.url(:large), :class => "show-image"%>
-			
+	<div class="show-description-container">
+		<h2 class='show-title'><%= @gallery.title %></h2>
+	</div>
 	<div class="show-description-container">
 		Description:
 		<p><%= @gallery.description %></p>

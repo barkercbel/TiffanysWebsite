@@ -1,6 +1,7 @@
 class GalleryItem extends React.Component {
 	render(){
 		
+		var primary = "#525C65"
 		var secondaryAccent = "#F08080";
 		var darkAccent = "#5E2605";
 		var darkOffWhite = "#888888";
@@ -29,9 +30,10 @@ class GalleryItem extends React.Component {
 		};
 		
 		var galleryTitle = {
-		    color: darkAccent,
-		    fontFamily: "gill-sans",
-		    fontSize: "24px"
+		    color: primary,
+		    marginTop: "20px",
+		    fontFamily: "'Book Antiqua', gill-sans",
+		    fontSize: "18px"
 		};
 		
 		var link = "/galleries/" + this.props.id;

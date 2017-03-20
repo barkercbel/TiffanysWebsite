@@ -3,12 +3,15 @@ class RoomsController < ApplicationController
   before_action :validate, only: [:edit, :update]
   
   def show
+    @galleries = Gallery.all
+    @images = @galleries.map{|g| g.image(:large)}
   end
   
   
   
   def statement
     @info = Room.find_by(key: "statement")
+    @info.value = @info.value.gsub '\n', '<br />'
   end
   
   
