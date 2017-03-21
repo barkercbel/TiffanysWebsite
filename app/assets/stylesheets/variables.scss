@@ -10,6 +10,10 @@ $light-offwhite: #EBEBEB;
 $dark-offwhite: #888888;
 
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
+@import url('https://fonts.googleapis.com/css?family=Arizonia|Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff');
+
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush|Herr+Von+Muellerhoff|Mrs+Saint+Delafield|Pinyon+Script|Sacramento|Special+Elite');
 
 @mixin gradient($color-one, $color-two) {
   background: -webkit-linear-gradient(left, $color-one, $color-two);

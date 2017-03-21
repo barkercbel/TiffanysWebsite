@@ -131,13 +131,24 @@ body{
   border-left: 1px solid $primary;
   border-bottom: 1px solid $primary;
   
-  h1{
+  
+  .web-header-container{
+    margin-top: 55px;
+  }
+  .header-description{
+    margin-top: 35px;
+  }
+  .web-header{
     color: $primary;
-    font-family: 'Playfair Display SC', "Book Antiqua", georgia;
+    font-family: 'Herr Von Muellerhoff', georgia;
     font-size: 67px;
     text-shadow: 1px 1px 1px $secondary;
-    
+    weight: light;
+  }  
+  .two{
+    padding-left: 45px;
   }
+  
   
   .login-container{
     
