@@ -1,6 +1,6 @@
 App.room = App.cable.subscriptions.create "RoomChannel",
   connected: ->
-    @perform 'getconnections'
+    @perform 'get_connections'
 	
   received: (data) ->
     if !data.connections
@@ -10,6 +10,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   
   speak: () ->
     message = $("#message-content").val()
+    $("#message-content").val("")
     from = $("#send-button").data('user')
     if !from
       from = 'annonymous'

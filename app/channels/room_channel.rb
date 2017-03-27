@@ -4,6 +4,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
+    get_connections
     unless ActionCable.server.connections.length > 0
       Message.delete_all
     end
@@ -16,7 +17,7 @@ class RoomChannel < ApplicationCable::Channel
     end
   end
   
-  def getconnections
+  def get_connections
     ActionCable.server.broadcast 'room_channel', connections: ActionCable.server.connections.length
   end
   

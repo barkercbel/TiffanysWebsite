@@ -35,19 +35,17 @@ class UsersController < ApplicationController
     
     user = User.find_by(username: "Tiffany")
     
-    
-    respond_to do |format|
-      if !user.try :authenticate, @user.password
-        session[:user] = @user.username
-        format.html {redirect_to root_path, flash: {notice: 'new admin user could not be created, you have successfully logged into a temparary account for the chat window'}}
-      elsif @user.save
-        session[:user] = @user.username
-        format.html { redirect_to root_path }
+    if user.try :authenticate, @user.password
+      if @user.save
+        session[:user] = 'Admin'
+        redirect_to root_path, flash: {notice: "Admin account created"}
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        redirect_to new_user_path, flash: {notice: "Could not create account"}
       end
+    else
+      redirect_to new_user_path, flash: {notice: "Can only create admin accounts at this time"}
     end
+    
   end
 
 
