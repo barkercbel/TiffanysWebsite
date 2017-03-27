@@ -1,6 +1,10 @@
 
 <div id='secondary-header'></div>
 
+<% unless flash[:notice].nil? %>
+	<h6 id='error' class="center" style="margin-left: 50px; color: red;"><%= flash[:notice] %></h6>
+<% end %>
+
 <div id="greeting">
 	<h2>Welcome</h2>
 	<p>You can scroll through artwork below or click on the <em>Gallery</em> tab to see a full display of artword. Feel free to contact the artist Tiffany Nelson through the <em>Contact</em> page</p>

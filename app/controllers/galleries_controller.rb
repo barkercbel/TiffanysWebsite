@@ -19,14 +19,10 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
 
-    respond_to do |format|
-      if @gallery.save
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
-        format.json { render :show, status: :created, location: @gallery }
-      else
-        format.html { render :new }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+    if @gallery.save
+      redirect_to @gallery, flash: {notice: "Gallery was successfully created."}
+    else
+      redirect_to root_path flash: {notice: "could not create gallery item"}
     end
   end
 
@@ -47,7 +43,7 @@ class GalleriesController < ApplicationController
   def destroy
     @gallery.destroy
     respond_to do |format|
-      format.html { redirect_to galleries_url, notice: 'Gallery was successfully destroyed.' }
+      format.html { redirect_to galleries_url}
       format.json { head :no_content }
     end
   end

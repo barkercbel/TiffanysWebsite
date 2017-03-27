@@ -1,4 +1,7 @@
 <div id='secondary-header'></div>
+<% unless flash[:notice].nil? %>
+	<h6 id='error' class="center" style="margin-left: 50px; color: red;"><%= flash[:notice] %></h6>
+<% end %>
 
 <%= render 'form', user: @user %>
 

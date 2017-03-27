@@ -1,7 +1,7 @@
 <div id='secondary-header'></div>
 
-<% unless flash[:error].nil? %>
-	<h6 id='error' class="center"><%= flash[:error] %></h6>
+<% unless flash[:notice].nil? %>
+	<h6 id='error' class="center" style="margin-left: 50px; color: red;"><%= flash[:notice] %></h6>
 <% end %>
 
 <div class="login-container">
