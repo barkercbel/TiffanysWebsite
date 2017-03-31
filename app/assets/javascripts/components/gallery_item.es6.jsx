@@ -52,7 +52,6 @@ class GalleryItem extends React.Component {
 		
 		return(
 			<div>
-				
 				<a href={link} ><img src={this.props.image_url} style={galleryImage} /> </a>
 				<h1 style={galleryTitle}>{this.props.title}</h1>
 				{descriptionBlock}
