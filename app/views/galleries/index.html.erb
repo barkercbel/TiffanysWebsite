@@ -10,7 +10,7 @@
 <div id="gallery-page-container" >
 	<% @galleries.each do |item| %>
 		<div class="gallery-component-div">
-			<%= react_component('GalleryParent', { title: item.title, image_url: item.image.url(:thumb).sub('http', 'https'), description: item.description, id: item.id }) %>
+			<%= react_component('GalleryParent', { title: item.title, image_url: item.image.url(:thumb), description: item.description, id: item.id }) %>
 		</div>
 	<% end %>
 </div>

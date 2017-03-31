@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   
   def show
     @galleries = Gallery.all
-    @images = @galleries.map{|g| g.image(:large).sub 'http', 'https'}
+    @images = @galleries.map{|g| g.image(:large)}
   end
   
   
