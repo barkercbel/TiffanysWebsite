@@ -43,7 +43,7 @@ class RoomsController < ApplicationController
   def send_email
     puts params[:email_info][:sender_email]
     puts params[:email_info][:email_content]
-    MailMailer.send_mail(params[:email_info][:sender_email], params[:email_info][:email_content]).deliver
+    #MailMailer.send_mail(params[:email_info][:sender_email], params[:email_info][:email_content]).deliver
     redirect_to root_path
   end
 
