@@ -12,8 +12,8 @@ TiffanysWebsite::Application.configure do
     address: "smtp.gmail.com",
     port: 587,
     authentication: "plain",
-    user_name: "barkercbel@gmail.com",
-    password: "coolbeans9",
+    user_name: "notifications.tiffany.nelson@gmail.com",
+    password: ENV['EMAIL_PASSWORD'],
     enable_starttls_auto: true
   }
 end
