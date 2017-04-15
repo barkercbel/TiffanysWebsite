@@ -51,13 +51,13 @@
   	<div class='overflow-container'>
 	  	<div>
   			<div id='menu-container'>
-    			<li><%= link_to 'Home', root_path, :class => 'main-menu' %></li>
+  				<li><%= link_to 'Artist', root_path, :class => 'main-menu' %></li>
     			<li class="bar">|</li>
   				<li><%= link_to 'Gallery', galleries_path, :class => 'main-menu' %></li>
   				<li class="bar">|</li>
-  				<li><%= link_to 'Artist', statement_path, :class => 'main-menu' %></li>
- 				<li class="bar">|</li>
- 				<li><%= link_to 'Contact', contact_path, :class => 'main-menu' %></li>
+    			<li><%= link_to 'Discussion', discussion_path, :class => 'main-menu' %></li>
+  				<li class="bar">|</li>
+  				<li><%= link_to 'Contact', contact_path, :class => 'main-menu' %></li>
 		  	</div>
 	  	</div>
   	</div>
@@ -70,16 +70,7 @@
 	    </div>
     </div>
     
-	<div id="messages-container">
-		<span class="pointer-cursor chat-title" onclick="toggleExpand()">chat window -- people: <p id='connections'><%= @connections %></p></span>
-		<div id="messages-inner">
-			<textarea id="message-content" data-behavior="message-content-box" ></textarea>
-			<input title="Click on login to create a temperary account to see your name appear on your messages" type="button" id="send-button" data-user="<%= session[:user] %>" onclick="App.room.speak()" value="send" />
-    		<div id="messages" class="hide">
-				<%= render @messages %>
-			</div>
-		</div>
-	</div>
+
   
   </body>
 </html>

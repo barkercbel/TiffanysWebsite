@@ -7,7 +7,7 @@
 
 
 body{
-
+  background: $fill;
 }
 
 .hide{
@@ -18,93 +18,7 @@ body{
   cursor: pointer;
 }
 
-#send-button{
-  cursor: pointer;
-  width: 25%;
-  height: 25px;
-}
 
-#connections{
-  display: inline;
-}
-
-.chat-title{
-  color: white;
-  font-size: 14px;
-  font-family: verdana;
-  margin-left: 25px;
-}
-
-#messages-container{
-    right: 60px;
-    position: fixed;
-    border-radius: 10px 10px 0px 0px;
-    border: 2px solid $fill;
-    width: 350px;
-    height: 40px;
-    background: $primary;
-    bottom: 0px;
-}
-
-#messages-inner{
-  margin: 30px 10px 0px 10px;
-  height: 350px;
-  border-radius: 10px 0px 0px 0px;
-  padding: 15px 10px 0px 10px;
-  background: $fill;
-  overflow-y: scroll;
-}
-
-#message-content{
-  width: 100%;
-  height: 50px;
-  background: white;
-  color: black;
-  bottom: 0px;
-  resize: none;
-}
-
-.user{
-  margin-top: 15px;
-  float: left;
-  background: $light-offwhite;
-  width: 90%;
-  border-radius: 15px 15px 15px 0px;
-}
-
-.user-title{
-  font-family: helvetica, verdana;
-  font-size: 14px;
-  margin-left: 10px;
-  color: black;
-}
-
-.user-content{
-  font-family: helvetica, verdana;
-  font-size: 12px;
-  color: $primary;
-}
-    
-.artist{
-  margin-top: 15px;
-  float: right;
-  background: $primary;
-  width: 90%;
-  border-radius: 15px 15px 0px 15px;
-}
-
-.artist-title{
-  font-family: verdana;
-  font-size: 14px;
-  margin-left: 10px;
-  color: $secondary;
-}
-
-.artist-content{
-  font-family: verdana;
-  font-size: 12px;
-  color: $secondary;
-}
 
 /************************ Header ******************************/
 .header-color{
@@ -227,7 +141,7 @@ body{
       padding: 7px;
     }
     .main-menu:hover{
-      background: white;
+      background: $fill;
       color: $pink;
     }
 }

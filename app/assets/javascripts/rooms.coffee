@@ -1,7 +1,10 @@
 
-@slideShow = {
-	
+@room = {
 
+  checkSendMessage: (event) ->
+    if(event.which == 13)
+      App.room.speak()
+      
   next: (galleryArray) ->
 
     images = JSON.parse(galleryArray)

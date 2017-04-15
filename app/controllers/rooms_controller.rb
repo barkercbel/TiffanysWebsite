@@ -1,12 +1,22 @@
 class RoomsController < ApplicationController
   
   before_action :validate, only: [:edit, :update]
+  before_action :get_messages, only: [:discussion]
+  
+  def get_messages
+    @messages = Message.order(:created_at => :desc)
+    @connections = ActionCable.server.connections.length
+  end
   
   def show
     @galleries = Gallery.all
     @images = @galleries.map{|g| g.image(:large)}
   end
   
+  
+  def discussion
+    
+  end
   
   
   def statement

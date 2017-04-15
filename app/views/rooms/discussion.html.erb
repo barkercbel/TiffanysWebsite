@@ -1,0 +1,16 @@
+
+<h2>Welcome To The Discussion</h2>
+
+<input type="hidden" id="user-name" value="<%= session[:user] %>">
+
+<div id="messages-container">
+	<span class="pointer-cursor chat-title" onclick="toggleExpand()">chat window -- people: <p id='connections'><%= @connections %></p></span>
+	<textarea id="message-content" data-behavior="message-content-box" onkeyup="room.checkSendMessage(event)"></textarea>
+	<div id="messages-inner">	
+    	<div id="messages">
+			<%= render @messages %>
+		</div>
+	</div>
+</div>
+
+

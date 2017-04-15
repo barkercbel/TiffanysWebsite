@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   resources :galleries
   
-  root to: 'rooms#show'
+  root to: 'rooms#statement'
   post 'rooms/disco' => 'rooms#disco'
   
-  get 'statement' => 'rooms#statement', as: :statement
+  get 'discussion' => 'rooms#discussion', as: :discussion
   get 'contact' => 'rooms#contact', as: :contact
   get 'room/:id/edit' => 'rooms#edit', as: :edit_room_info
   patch 'room/:id/update' => 'rooms#update', as: :room
