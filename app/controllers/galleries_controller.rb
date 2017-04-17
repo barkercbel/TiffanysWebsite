@@ -59,9 +59,4 @@ class GalleriesController < ApplicationController
       params.require(:gallery).permit(:title, :description, :image)
     end
     
-    def validate
-      unless session[:user].eql? "Admin"
-        redirect_to root_path
-      end
-    end
 end

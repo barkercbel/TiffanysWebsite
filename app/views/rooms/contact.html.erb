@@ -11,7 +11,7 @@
 </div>
 
 <div id='admin-links'>
-	<% if session[:user].eql? "Admin" %>
+	<% if !session[:user_id].nil? && @current_user.admin %>
 		<%= link_to 'Edit', edit_room_info_path(@info) %>
 	<% end %>
 </div>

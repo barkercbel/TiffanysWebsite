@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
   
-  before_action :validate, only: [:edit, :update]
   before_action :get_messages, only: [:discussion]
   
   def get_messages
@@ -66,7 +65,7 @@ class RoomsController < ApplicationController
     end
     
     def validate
-      unless session[:user].eql? "Admin"
+      if session[:user_id].nil? || !@current_user.admin
         redirect_to root_path
       end
     end

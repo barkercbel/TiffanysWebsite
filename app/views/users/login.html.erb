@@ -1,7 +1,7 @@
-<div id='secondary-header'></div>
+<h2 class="page-header">Login</h2>
 
 <% unless flash[:notice].nil? %>
-	<h6 id='error' class="center" style="margin-left: 50px; color: red;"><%= flash[:notice] %></h6>
+	<h6 id='error' class="notice" ><%= flash[:notice] %></h6>
 <% end %>
 
 <div class="login-container">
@@ -33,6 +33,4 @@
 <% end %>  	
 </div>
 
-<div id='login-message'>
-	<em>*To log in with a temperary account and assign a name for yourself in the chat window, enter a username with any password and click login</em>
-</div>
+

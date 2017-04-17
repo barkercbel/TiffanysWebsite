@@ -3,7 +3,7 @@
 
 <br />
 
-<% if session[:user].eql? 'Admin' %>
+<% if !session[:user_id].nil? && @current_user.admin %>
 	<%= link_to 'New Galley Image', new_gallery_path, :class => 'admin-button' %>
 <% end %>
 

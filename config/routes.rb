@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   get 'users/logout' => 'users#logout', as: :logout
   get 'users/new' => 'users#new', as: :new_user
   post 'users/login' => 'users#submit_login', as: :submit_login
-  post 'users/new' => 'users#create'
-  delete 'users/:id' => 'users#destroy'
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
+  post 'users/new' => 'users#create', as: :create_user
+  delete 'users/:id' => 'users#destroy', as: :delete_account
+  get 'users/newAdmin' => 'users#new_admin', as: :create_new_admin
+  patch 'users/update' => 'users#update_password', as: :update_password
   
   mount ActionCable.server => '/cable'
 

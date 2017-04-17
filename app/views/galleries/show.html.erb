@@ -15,7 +15,7 @@
 </div>
 
 <div id='admin-links'>
-	<% if session[:user].eql? "Admin" %>
+	<% if !session[:user_id].nil? && @current_user.admin %>
 		<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 		<%= link_to 'Delete', @gallery, method: :delete, data: { confirm: 'Are you sure?' } %> |
 		<%= link_to 'Back', galleries_path %>

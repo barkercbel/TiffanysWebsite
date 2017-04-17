@@ -1,10 +1,4 @@
-<div id='secondary-header'></div>
-<% unless flash[:notice].nil? %>
-	<h6 id='error' class="center" style="margin-left: 50px; color: red;"><%= flash[:notice] %></h6>
-<% end %>
+<h2 class="page-header">Create New Account</h2>
 
 <%= render 'form', user: @user %>
 
-<div id='login-message'>
-	<em>*at this time, only administrators can create new accounts. You are still able to login in with a temparary account by going to login</em>
-</div>

@@ -1,6 +1,64 @@
-<h1>Editing User</h1>
+<h2 class="page-header" >Accounts Page</h2>
 
-<%= render 'form', user: @user %>
+<% unless flash[:notice].nil? %>
+	<h6 id='error' class="notice" ><%= flash[:notice] %></h6>
+<% end %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="login-container">
+<%= form_for :user, url: update_password_path, method: :patch do |f| %>
+	<fieldset>
+  		<legend><p>Login</p></legend>
+  		
+  		<table>
+  			<tr>
+  				<div class="field">
+    				<td><%= f.label 'Old Password' %></td>
+    				<td class="indent"><%= f.text_field :old_password %></td>
+  				</div>
+			</tr>
+			
+			<tr>
+  				<div class="field">
+    				<td><%= f.label 'New Password:' %></td>
+    				<td class="indent"><%= f.password_field :new_password %></td>
+	  			</div>
+  		  	</tr>
+  		  	
+  		  	<tr>
+	  		  	<div class="field">
+    				<td><%= f.label 'Confirm Password:' %></td>
+    				<td class="indent"><%= f.password_field :password_confirmation %></td>
+	  			</div>
+  			</tr>
+  		</table>
+  		<div class="field">
+    		<%= f.submit 'Save Password', :class => 'submit-button' %>
+  		</div>
+  	</fieldset>
+<% end %>  	
+</div>
+
+<% if @current_user.admin %>
+	<%= button_to "Create New Admin", create_new_admin_path, class: :settings_button, method: :get %>
+<% end %>
+
+<%= button_to "Delete Account", delete_account_path(@current_user), class: :settings_button, method: :delete%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

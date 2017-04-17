@@ -17,7 +17,13 @@ body{
 .pointer-cursor{
   cursor: pointer;
 }
-
+h2{
+  margin-left: 15%;
+  margin-top: 40px;
+  font-size: 32px;
+  color: $primary;
+  font-family: georgia, verdana, sans-serif;
+}
 
 
 /************************ Header ******************************/
@@ -213,10 +219,11 @@ body{
   color: black;
 }
 
-
-
-
-
+.page-description{
+  margin-left: 17%;
+  margin-top: 15px;
+  color: $primary;
+}
 
 
 

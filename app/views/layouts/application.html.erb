@@ -7,23 +7,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <script type="text/javascript">
-    	function toggleExpand(){
-    		let messagesContainer = document.getElementById("messages-container");
-    		let messagesInner = document.getElementById("messages");
-    		
-    		if(messagesInner.classList.contains("hide")){
-    			messagesInner.classList.remove("hide");
-    			messagesContainer.style.height = "410px";
-    		}
-    		else{
-    			messagesInner.classList.add("hide");
-    			messagesContainer.style.height = "40px";
-    		}
-    	}
-    
-    </script>
-    
   </head>
 
   <body>
@@ -36,12 +19,17 @@
 	  	<div class='header-description'><em>artist | metal smith | maker</em></div>
 	  	<span class="login-container">
 			<ul>
-				<% if session[:user].nil? %>
+				<% if session[:user_id].nil? %>
 					<li><%= link_to 'Login', login_path, :class => 'login', method: :get %></li>
 				<% else %>
 					<li><%= link_to 'Logout', logout_path, :class => 'logout', method: :get %></li>				
 				<% end %>
-				<li><%= link_to 'New User', new_user_path, :class => 'logout' %></li>
+			
+				<% if session[:user_id].nil? %>	
+					<li><%= link_to 'New User', new_user_path, :class => 'logout' %></li>
+				<% else %>
+					<li><%= link_to 'Account', edit_user_path(@current_user.id), :class => 'login' %></li>
+				<% end %>			
 			</ul>
 		</span>
   	</div>
