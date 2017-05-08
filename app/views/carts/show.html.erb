@@ -1,0 +1,21 @@
+
+
+<div id='secondary-header'></div>
+<h2>Cart</h2>
+
+<div id='cart-container'>
+	<div id='cart-container-inner'>
+		<% @cart.cart_items.each do |c| %>
+	
+			<div class="<%= cycle('odd', 'even') %>">
+				<span class='title'><%= c.gallery.title %></span><span class='row-price'>$<%= '%.2f' % (c.gallery.price * c.quantity) %></span>
+			</div>
+	
+		<% end %>
+	
+		
+	</div>
+	<div class='row'>
+		<span class='row-price'>$<%= '%.2f' % (@cart.total) %></span>	
+	</div>	
+</div>

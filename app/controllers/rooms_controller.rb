@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  
+  layout "no_sidebar", only: [:discussion]
   before_action :get_messages, only: [:discussion]
   
   def get_messages

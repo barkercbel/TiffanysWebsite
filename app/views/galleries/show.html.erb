@@ -2,16 +2,23 @@
 <p id="notice"><%= notice %></p>
 
 <div class="image-container">
+	<div class="show-header-container">
+		<p><%= @gallery.title %></p>
+	</div>
 	
 	<%= image_tag @gallery.image.url(:large), :class => "show-image"%>
-	<div class="show-description-container">
-		<h2 class='show-title'><%= @gallery.title %></h2>
+	
+	<div id='add-to-cart-container'>
+		<span id='cart-span'><%= image_tag 'Cart-icon.png', class: 'cart-icon'%></span>
+		<span onclick="cart.addItem(<%= @gallery.id %>)">Add To Cart</span>
+		<span>$<%= '%.2f' % @gallery.price %></span>
 	</div>
+	
 	<div class="show-description-container">
-		Description:
-		<p><%= @gallery.description %></p>
+		<h6>Description:</h6>
+		<span><%= @gallery.description %></span>
 	</div>
-
+	
 </div>
 
 <div id='admin-links'>

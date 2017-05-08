@@ -10,17 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417001801) do
+ActiveRecord::Schema.define(version: 20170507025719) do
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "gallery_id"
+    t.integer  "cart_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "quantity",   default: 1
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["gallery_id"], name: "index_cart_items_on_gallery_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "galleries", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.decimal  "price",              precision: 8, scale: 2
+    t.string   "category"
   end
 
   create_table "key_values", force: :cascade do |t|

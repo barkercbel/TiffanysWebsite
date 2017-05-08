@@ -1,0 +1,54 @@
+
+@import 'variables.scss';
+.carts{
+  
+  #cart-container{
+    width: 90%;
+    margin: 0px auto 50px auto;
+    min-height: 290px;
+    
+  }
+  
+  #cart-container-inner{
+    border-top: 1px solid $primary;
+    border-bottom: 1px solid $primary;
+    
+  }
+  
+  .row-price{
+    float: right;
+  }
+  
+  .title{
+    
+  }
+  
+  .row{
+    border-top: 1px solid warm-grey;
+    border-bottom: 1px solid warm-grey;
+    padding: 10px 20px 10px 50px;
+    color: $primary;
+    
+  }
+  
+  .odd{
+    @extend .row;
+    @include gradient($light-offwhite, white);
+    
+  }
+  
+  .even{
+    @extend .row;
+    color: black;
+    
+  }
+  
+}
+
+
+
+
+
+
+
+

@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   get 'users/newAdmin' => 'users#new_admin', as: :create_new_admin
   patch 'users/update' => 'users#update_password', as: :update_password
   
+  post 'carts/addItem' => 'carts#add_item_to_cart'
+  get 'carts/show' => 'carts#show'
+  
   mount ActionCable.server => '/cable'
 
 end

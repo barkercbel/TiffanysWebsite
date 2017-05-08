@@ -1,0 +1,23 @@
+<div id='side-bar'>
+  	<span class="toggle-show" onclick='toggleSidebar(this)' data-section='search-items'>+ </span><span class='side-bar-title'>Search</span>
+  		
+  		<ul id='search-items'>
+  			<% @categories.each do |c| %>
+  				<li class='side-bar-item'>
+  					<%= link_to c, galleries_path( :search_term => c ) %>
+  				</li>
+  			<% end %>
+  		</ul>
+  		
+  	<span class='toggle-show' onclick='toggleSidebar(this)' data-section='cart-items'>+ </span><span class='side-bar-title'>Cart</span>
+  	
+  	<% unless @cart.nil? %>
+  		<ul id='cart-items'>
+  			<% @cart.cart_items.each do |c| %>
+  				<li class='side-bar-item'>
+  					<%= link_to c.gallery.title, c.gallery %><a class='quantity'> x <%= c.quantity %></a>
+  				</li>
+  			<% end %>
+  		</ul>
+  	<% end %>
+</div>

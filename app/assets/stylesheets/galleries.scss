@@ -4,31 +4,67 @@
 .galleries{
   
   .image-container{
-    padding-top: 30px;
+    padding-top: 5px;
+    
+    #add-to-cart-container{
+     
+      span{
+        color: $pink;
+        font-size: 16px;
+        font-family: helvetica;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        margin-left: -10px;
+        display: inline-block;
+        padding: 1px 10px 1px 10px;
+      } 
+      
+    }
+    
+    #add-to-cart-container{
+      float: right;
+      margin-right: 10%;
+      cursor: pointer;
+    }
     
     .show-image{
       width: 80%;
       margin-left: 10%;
-      margin-top: 80px;
     }
-    
-    .show-title{
-      margin-top: 20px;
-      font-size: 22px;
-      font-family: "Book Antiqua", georgia, helvetica, verdana;
-    }
+   
     
     .show-description-container{
-      margin-left: 15%;
+      margin-left: 10%;
       margin-right: 10%;
-      margin-top: 50px;
+      margin-top: 70px;
       font-size: 16px;
       font-family: helvetica, verdana;
       
-      p{
+      h6{
+        font-size: 14px;
+        margin-left: 2%;
+      }
+      
+      span{
         font-size: 14px;
         width: 70%;
+        display: inline-block;
+        padding: 0px 15%;
+        border-right: 2px solid $secondary;
+        border-left: 2px solid $secondary;
+        border-radius: 7px;
       } 
+    }
+    
+    .show-header-container{
+      
+      p{
+        font-family: "Book Antiqua", georgia, helvetica;
+        font-size: 22px;
+        color: $primary;
+        margin-left: 10%;
+      }
+
     }
   }
   
@@ -115,17 +151,18 @@
   .admin-button{
     text-decoration: none;
     padding: 3px 7px 3px 7px;
-    border-radius: 0px 0px 15px 0px;
-    border: 1px solid $accent;
-    background: $secondary;
+    border-radius: 7px;
+    border: 1px solid $secondary;
+    color: $secondary;
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 5%;
   }
   
   #gallery-page-container{
     margin-top: 50px;
   }
+
 }
 
 

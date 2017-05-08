@@ -3,8 +3,14 @@ class GalleriesController < ApplicationController
   before_action :validate, only: [:new, :edit, :update, :destroy]
   
   def index
-    @galleries = Gallery.all
+    search_term = params[:search_term]
+    if search_term.eql? 'all'
+      @galleries = Gallery.all
+    else
+      @galleries = Gallery.where(:category => search_term)
+    end
   end
+  
 
   def show
   end
@@ -53,10 +59,11 @@ class GalleriesController < ApplicationController
     def set_gallery
       @gallery = Gallery.find(params[:id])
     end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_params
-      params.require(:gallery).permit(:title, :description, :image)
+      params.require(:gallery).permit(:title, :description, :image, :price, :category)
     end
     
 end

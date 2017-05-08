@@ -27,6 +27,18 @@
     				<td class="indent"><%= f.file_field :image, :class => 'gallery-image-field' %></td>
 		  		</div> 
 			</tr>
+			<tr>
+				<div class="field">
+					<td><span class='gallery-label'>Price:</span></td>
+					<td class="indent"><%= f.text_field :price, :class => 'gallery-field'%></td>
+				</div>
+			</tr>
+			<tr>
+				<div class="field">
+					<td><span class="gallery-label">Category</span></td>
+					<td class="indent"><%= f.text_field :category, :class => 'gallery-field'%></td>
+				</div>
+			</tr>
 		</table>
 		
 		<div class='field'>
