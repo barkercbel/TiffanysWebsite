@@ -1,0 +1,8 @@
+
+<ul>
+  	<% @cart.cart_items.each do |c| %>
+  		<li class='side-bar-item'>
+  			<%= link_to c.gallery.title, c.gallery %><a class='quantity'> x <%= c.quantity %></a>
+  		</li>
+  	<% end %>
+</ul>
