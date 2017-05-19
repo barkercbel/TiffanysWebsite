@@ -6,10 +6,22 @@ class Cart < ApplicationRecord
     current_item = cart_items.find_by(gallery_id: id)
     if current_item
       current_item.quantity += 1
-     else
-       current_item = CartItem.new
-       current_item.cart = self
-       current_item.gallery = Gallery.find(id)
+    else
+      current_item = CartItem.new
+      current_item.cart = self
+      current_item.gallery = Gallery.find(id)
+    end
+    current_item
+  end
+  
+  def remove_item(id, quantityIn)
+    quantity = quantityIn.to_i
+    current_item = cart_items.find_by(gallery_id: id)
+    if current_item
+      if current_item.quantity >= quantity
+        current_item.quantity -= quantity
+        puts current_item.quantity
+      end
     end
     current_item
   end

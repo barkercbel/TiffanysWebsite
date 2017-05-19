@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   patch 'users/update' => 'users#update_password', as: :update_password
   
   post 'carts/addItem' => 'carts#add_item_to_cart'
+  post 'carts/removeItems' => 'carts#remove_items_from_cart'
   get 'carts/show' => 'carts#show'
+  delete 'carts/clear' => 'carts#clear_cart'
   
   mount ActionCable.server => '/cable'
 

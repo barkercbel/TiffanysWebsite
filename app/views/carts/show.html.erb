@@ -8,14 +8,26 @@
 		<% @cart.cart_items.each do |c| %>
 	
 			<div class="<%= cycle('odd', 'even') %>">
-				<span class='title'><%= c.gallery.title %></span><span class='row-price'>$<%= '%.2f' % (c.gallery.price * c.quantity) %></span>
+				<span class='title'>
+					<span id="q-<%= c.gallery.id %>"><%= c.quantity %></span> x <%= c.gallery.title %>
+				</span>
+				<span class='row-price'>
+					$<%= '%.2f' % (c.gallery.price * c.quantity) %>
+					<input type='text' id='num-<%= c.gallery.id %>' class='num-remove' /><input type='button' value='Remove' id='<%= c.gallery.id %>' class='submit-remove' onclick='cart.removeItems(this)' />
+					
+				</span>
 			</div>
-	
+		
 		<% end %>
 	
 		
 	</div>
 	<div class='row'>
-		<span class='row-price'>$<%= '%.2f' % (@cart.total) %></span>	
+		<span class='row-price'>Total: $<%= '%.2f' % (@cart.total) %></span>	
+	</div>
+	
+	<div class='cart-buttons'>
+		<input type='button' value='ORDER' class='cart-order login' />
+		<input type='button' value='CLEAR' class='cart-clear logout' onclick="cart.clearCart()"/>
 	</div>	
 </div>

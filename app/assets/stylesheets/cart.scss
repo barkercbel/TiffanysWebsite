@@ -34,6 +34,7 @@
   .odd{
     @extend .row;
     @include gradient($light-offwhite, white);
+    color: black;
     
   }
   
@@ -43,10 +44,58 @@
     
   }
   
+  .num-remove{
+    width: 40px;
+  }
+  
+  .submit-remove{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  
+  
+  .cart-order{
+    color: $dark-offwhite;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .cart-order:hover{
+    color: $pink;
+    
+  }
+  
+  
+  .cart-buttons{
+    float: right;
+    clear: right;
+    margin-top: 40px;
+    padding-right: 18px;
+  }
+  .cart-clear{
+    color: $pink;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .cart-clear:hover{
+    color: $dark-offwhite;
+    
+  }
+  
 }
 
+  
 
 
+  .login{
+    color: $pink;
+  }
+  .login:hover{
+    background: none;
+    color: $dark-offwhite;
+  }
 
 
 

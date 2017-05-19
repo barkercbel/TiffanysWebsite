@@ -5,11 +5,28 @@ class CartsController < ApplicationController
   #POST /carts/addItem
   def add_item_to_cart()
     gallery_item = @cart.add_item(params[:id])
-    gallery_item.save
-    
+    if gallery_item
+      gallery_item.save
+    end
   end
-
-
+  
+  def remove_items_from_cart
+    gallery_item = @cart.remove_item(params[:id], params[:quantity])
+    puts "***********************************************************"
+    puts "***********************************************************"
+    puts "***********************************************************"
+    puts "***********************************************************"
+    puts "***********************************************************"
+    puts gallery_item.quantity
+    if gallery_item
+      if gallery_item.quantity < 1
+        gallery_item.destroy
+      else
+        gallery_item.save
+      end
+    end
+  end
+  
   def clear_cart
     @cart.destroy
   end

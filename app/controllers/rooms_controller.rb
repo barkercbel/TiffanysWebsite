@@ -27,6 +27,7 @@ class RoomsController < ApplicationController
   
   def contact
     @info = Room.find_by(key: "contact")
+    @info.value = @info.value.gsub '\n', '<br />'
   end
   
   
