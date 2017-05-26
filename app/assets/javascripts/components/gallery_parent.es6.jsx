@@ -4,6 +4,7 @@ class GalleryParent extends React.Component {
   	super();
   	this.toggleExpand = this.toggleExpand.bind(this);
   	this.addToCart = this.addToCart.bind(this);
+  	this.notLoggedInDisplay = this.notLoggedInDisplay.bind(this)
   	this.state = {desc: ""};
   };
   
@@ -14,6 +15,10 @@ class GalleryParent extends React.Component {
 	else{
 		this.setState({desc: ""});
 	}
+  };
+  
+  notLoggedInDisplay(){
+  	alert("Please log in to add items to your cart");
   };
   
   addToCart(){
@@ -128,18 +133,28 @@ class GalleryParent extends React.Component {
 	}
 		
   	var link = "/galleries/" + this.props.id;
-  	
+  	var cartBlock;
+  	if(this.props.loggedOut.toString() == "false"){
+  		cartBlock = (<div style={addToCartContainer} onClick={this.addToCart}>
+						<img style={cartIcon} src='/assets/Cart-icon-e4f76a3c6e264af8f4deb2c3b01e903c1770207839dbae7b5d3cf07877228eb8.png' />
+						<span style={cartSpan}>| Add To Cart |</span>
+						<span style={cartSpan}>{Number(this.props.price).toFixed(2)}</span>
+					</div>);
+  	}
+  	else{
+  		cartBlock = (<div style={addToCartContainer} onClick={this.notLoggedInDisplay}>
+						<img style={cartIcon} src='/assets/Cart-icon-e4f76a3c6e264af8f4deb2c3b01e903c1770207839dbae7b5d3cf07877228eb8.png' />
+						<span style={cartSpan}>| Add To Cart |</span>
+						<span style={cartSpan}>{Number(this.props.price).toFixed(2)}</span>
+					</div>);
+  	}
   	return (
     	<div style={galleryContainerSpacing} >
 	    	<div style={galleryContainerColor} >
 				<div>
 					<a href={link} ><img src={this.props.image_url} style={galleryImage} /> </a>
 					<h1 style={galleryTitle}>{this.props.title}</h1>
-					<div style={addToCartContainer} onClick={this.addToCart}>
-						<img style={cartIcon} src='/assets/Cart-icon-e4f76a3c6e264af8f4deb2c3b01e903c1770207839dbae7b5d3cf07877228eb8.png' />
-						<span style={cartSpan}>| Add To Cart |</span>
-						<span style={cartSpan}>{Number(this.props.price).toFixed(2)}</span>
-					</div>
+					{cartBlock}
 					{descriptionBlock}
 				</div>
 			<div style={galleryExpand} onClick={this.toggleExpand}></div>

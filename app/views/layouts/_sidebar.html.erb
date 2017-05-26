@@ -11,7 +11,7 @@
   		</div>
   	<span class='toggle-show' onclick='toggleSidebar(this)' data-section='cart-items'>+ </span><span class='side-bar-title'>Cart</span>
   	
-  	<% unless @cart.nil? %>
+  	<% if !@cart.nil? %>
   		<div id='cart-items'>
 			<%= render :partial => '/layouts/cart' %>
   		</div>

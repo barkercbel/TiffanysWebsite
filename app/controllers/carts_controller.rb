@@ -12,11 +12,6 @@ class CartsController < ApplicationController
   
   def remove_items_from_cart
     gallery_item = @cart.remove_item(params[:id], params[:quantity])
-    puts "***********************************************************"
-    puts "***********************************************************"
-    puts "***********************************************************"
-    puts "***********************************************************"
-    puts "***********************************************************"
     puts gallery_item.quantity
     if gallery_item
       if gallery_item.quantity < 1
