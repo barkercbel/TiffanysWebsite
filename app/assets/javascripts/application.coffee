@@ -21,3 +21,4 @@ exports.toggleSidebar = (element) ->
 	else
 		section.style.display = "block"
 		element.innerHTML = "+ "
+		

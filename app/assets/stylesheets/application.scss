@@ -10,6 +10,18 @@ body{
   background: $fill;
 }
 
+.basic-link{
+  background: none;
+  color: $primary;
+  text-decoration: none;
+  margin-left: 20px;
+  
+}
+.basic-link:hover{
+  background: none;
+  color: $pink;
+  
+}
 .hide{
   display: none;
 }

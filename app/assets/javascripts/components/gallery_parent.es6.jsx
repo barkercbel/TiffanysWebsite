@@ -4,7 +4,7 @@ class GalleryParent extends React.Component {
   	super();
   	this.toggleExpand = this.toggleExpand.bind(this);
   	this.addToCart = this.addToCart.bind(this);
-  	this.notLoggedInDisplay = this.notLoggedInDisplay.bind(this)
+  	this.notLoggedIn = this.notLoggedIn.bind(this)
   	this.state = {desc: ""};
   };
   
@@ -17,8 +17,8 @@ class GalleryParent extends React.Component {
 	}
   };
   
-  notLoggedInDisplay(){
-  	alert("Please log in to add items to your cart");
+  notLoggedIn(){
+  	window.location.href = "/users/login";
   };
   
   addToCart(){
@@ -142,7 +142,7 @@ class GalleryParent extends React.Component {
 					</div>);
   	}
   	else{
-  		cartBlock = (<div style={addToCartContainer} onClick={this.notLoggedInDisplay}>
+  		cartBlock = (<div style={addToCartContainer} onClick={this.notLoggedIn}>
 						<img style={cartIcon} src='/assets/Cart-icon-e4f76a3c6e264af8f4deb2c3b01e903c1770207839dbae7b5d3cf07877228eb8.png' />
 						<span style={cartSpan}>| Add To Cart |</span>
 						<span style={cartSpan}>{Number(this.props.price).toFixed(2)}</span>

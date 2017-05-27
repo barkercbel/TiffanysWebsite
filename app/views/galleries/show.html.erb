@@ -11,7 +11,7 @@
 	<div id='add-to-cart-container'>
 		<span id='cart-span'><%= image_tag 'Cart-icon.png', class: 'cart-icon'%></span>
 		<% if @cart.nil? %>
-			<span onclick="alert('Please log in to add items to cart')">Add To Cart</span>
+			<span onclick="window.location.href = '/users/login';">Add To Cart</span>
 		<% else %>
 			<span onclick="cart.addItem(<%= @gallery.id %>)">Add To Cart</span>
 		<% end %>
